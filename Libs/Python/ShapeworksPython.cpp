@@ -593,6 +593,7 @@ PYBIND11_MODULE(shapeworks, m)
   .def("centerOfMass",          &Mesh::centerOfMass, "center of mass of mesh")
   .def("numPoints",             &Mesh::numPoints, "number of points")
   .def("numFaces",              &Mesh::numFaces, "number of faces")
+  .def("getPoints",             &Mesh::getPoints)
   .def("getFieldNames",         &Mesh::getFieldNames, "print all field names in mesh")
   .def("setField", [](Mesh &mesh, std::vector<double>& v, std::string name) {
     vtkSmartPointer<vtkDoubleArray> arr = vtkSmartPointer<vtkDoubleArray>::New();

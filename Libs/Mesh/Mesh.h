@@ -3,6 +3,7 @@
 #include "Shapeworks.h"
 #include "ImageUtils.h"
 
+#include <vector>
 #include <vtkSmartPointer.h>
 #include <vtkPolyData.h>
 #include <string>
@@ -100,6 +101,10 @@ public:
 
   /// number of faces
   vtkIdType numFaces() const { return mesh->GetNumberOfCells(); }
+
+  const std::vector<std::vector<double>> getPoints();
+
+  vtkCell getPoints() const { return mesh->GetCellData(); }
 
   // fields of mesh points //
 
